@@ -1,0 +1,229 @@
+h1 {
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+/* 
+====================
+ calculator styling
+====================
+*/
+.grid_layout {
+  width: 50%;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-areas: "out out out out" "c pi e pl" "n7 n8 n9 mi" "n4 n5 n6 di" "n1 n2 n3 mu" "n0 do eq eq" "sin cos tn cotg";
+}
+
+.grid_layout .text_box {
+  text-align: right;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: out;
+  border: 2px solid black;
+  font-size: 2.5rem;
+  padding-block: 10px;
+  padding-right: 15px;
+  overflow-x: auto;
+}
+
+.grid_layout .btn {
+  border: 1px solid black;
+  font-size: 1.5rem;
+  padding-block: 1em;
+  margin: 0.05em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.grid_layout .btn-c {
+  background-color: #ff4e4e;
+}
+
+.grid_layout .btn-c:hover {
+  background-color: #e65d5d;
+}
+
+.grid_layout .btn-dot, .grid_layout .btn-e, .grid_layout .btn-pi {
+  background-color: #fff786;
+}
+
+.grid_layout .btn-dot:hover, .grid_layout .btn-e:hover, .grid_layout .btn-pi:hover {
+  background-color: #e7e075;
+}
+
+.grid_layout .btn-operation {
+  background-color: #70bfda;
+}
+
+.grid_layout .btn-operation:hover {
+  background-color: #83cce4;
+}
+
+.grid_layout .btn-gon {
+  background-color: pink;
+}
+
+.grid_layout .btn-gon:hover {
+  background-color: #ffa8b7;
+}
+
+.grid_layout .btn-eq {
+  background-color: #76d176;
+}
+
+.grid_layout .btn-eq:hover {
+  background-color: #68c768;
+}
+
+.grid_layout .btn-number {
+  background-color: #d5eef7;
+}
+
+.grid_layout .btn-number:hover {
+  background-color: #c4e5f0;
+}
+
+.grid_layout .btn-number[data-text="0"] {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  grid-area: n0;
+}
+
+.grid_layout .btn-number[data-text="1"] {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: n1;
+}
+
+.grid_layout .btn-number[data-text="2"] {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
+  grid-area: n2;
+}
+
+.grid_layout .btn-number[data-text="3"] {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+  grid-area: n3;
+}
+
+.grid_layout .btn-number[data-text="4"] {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: n4;
+}
+
+.grid_layout .btn-number[data-text="5"] {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: n5;
+}
+
+.grid_layout .btn-number[data-text="6"] {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+  grid-area: n6;
+}
+
+.grid_layout .btn-number[data-text="7"] {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: n7;
+}
+
+.grid_layout .btn-number[data-text="8"] {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: n8;
+}
+
+.grid_layout .btn-number[data-text="9"] {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: n9;
+}
+
+.grid_layout .btn-operation[data-text="+"] {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: pl;
+}
+
+.grid_layout .btn-operation[data-text="-"] {
+  -ms-grid-row: 3;
+  -ms-grid-column: 4;
+  grid-area: mi;
+}
+
+.grid_layout .btn-operation[data-text="*"] {
+  -ms-grid-row: 5;
+  -ms-grid-column: 4;
+  grid-area: mu;
+}
+
+.grid_layout .btn-operation[data-text="/"] {
+  -ms-grid-row: 4;
+  -ms-grid-column: 4;
+  grid-area: di;
+}
+
+.grid_layout #sin {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  grid-area: sin;
+}
+
+.grid_layout #cos {
+  -ms-grid-row: 7;
+  -ms-grid-column: 2;
+  grid-area: cos;
+}
+
+.grid_layout #tn {
+  -ms-grid-row: 7;
+  -ms-grid-column: 3;
+  grid-area: tn;
+}
+
+.grid_layout #cotg {
+  -ms-grid-row: 7;
+  -ms-grid-column: 4;
+  grid-area: cotg;
+}
+
+.grid_layout .btn-c {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: c;
+}
+
+.grid_layout .btn-pi {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: pi;
+}
+
+.grid_layout .btn-e {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: e;
+}
+
+.grid_layout .btn-dot {
+  -ms-grid-row: 6;
+  -ms-grid-column: 2;
+  grid-area: do;
+}
+
+.grid_layout .btn-eq {
+  -ms-grid-row: 6;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: eq;
+}
+/*# sourceMappingURL=main.css.map */
