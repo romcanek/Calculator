@@ -1,0 +1,304 @@
+@font-face {
+  font-family: digital;
+  src: url("../font/digital-7.ttf");
+}
+
+::-webkit-scrollbar {
+  border-radius: 50px;
+  height: 6px;
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #303137;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E87CF;
+}
+
+body {
+  overflow: auto;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+/* 
+====================
+ calculator styling
+====================
+*/
+.grid_layout {
+  background-color: #17181A;
+  padding: 3em 2.3em 3em 2.3em;
+  border-radius: 15px;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  height: 100%;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  gap: 0.8em;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-areas: "out out out out" "sin cos tn pi" "c maz di mu" "n7 n8 n9 mi" "n4 n5 n6 pl" "n1 n2 n3 pl" "n0 n0 do pl" "n0 n0 do pl";
+}
+
+.grid_layout .text_box {
+  font-family: digital;
+  text-align: right;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: out;
+  color: white;
+  font-size: 3rem;
+  padding-block: 10px;
+  padding-right: 15px;
+  overflow-x: auto;
+  margin-bottom: 1.2em;
+}
+
+.grid_layout .btn {
+  border: none;
+  font-size: 1.5rem;
+  width: 3.5em;
+  height: 3.5em;
+  margin: 0.05em;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.grid_layout .btn-c {
+  background-color: #5D5F61;
+  color: #A1A2A3;
+}
+
+.grid_layout .btn-c:hover {
+  background-color: #333435;
+}
+
+.grid_layout .btn-pi, .grid_layout .btn-gon {
+  border-radius: 10em;
+  padding-block: 10px;
+  width: 100%;
+  height: 100%;
+  font-size: 1.05rem;
+  background-color: #303137;
+  color: #1E87CF;
+}
+
+.grid_layout .btn-pi:hover, .grid_layout .btn-gon:hover {
+  background-color: #4c4d52;
+}
+
+.grid_layout .btn-operation {
+  background-color: #005DB2;
+  color: #339DFF;
+}
+
+.grid_layout .btn-operation:hover {
+  background-color: #24639e;
+}
+
+.grid_layout .btn-operation[data-text="+"] {
+  height: 5.32em;
+  margin-top: 0.45em;
+}
+
+.grid_layout .btn-eq {
+  background-color: #1991FF;
+  color: #B2DAFF;
+  margin-top: 6.57em;
+  height: 5.32em;
+}
+
+.grid_layout .btn-eq:hover {
+  background-color: #0068c9;
+}
+
+.grid_layout .btn-number, .grid_layout .btn-dot {
+  background-color: #303137;
+  color: #1E87CF;
+}
+
+.grid_layout .btn-number:hover, .grid_layout .btn-dot:hover {
+  background-color: #4c4d52;
+}
+
+.grid_layout .btn-del {
+  background-color: #5D5F61;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: maz;
+}
+
+.grid_layout .btn-del img {
+  width: 32px;
+  height: auto;
+}
+
+.grid_layout .btn-del:hover {
+  background-color: #333435;
+}
+
+.grid_layout .btn-number[data-text="0"] {
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: n0;
+  width: 100%;
+}
+
+.grid_layout .btn-number[data-text="1"] {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  grid-area: n1;
+}
+
+.grid_layout .btn-number[data-text="2"] {
+  -ms-grid-row: 6;
+  -ms-grid-column: 2;
+  grid-area: n2;
+}
+
+.grid_layout .btn-number[data-text="3"] {
+  -ms-grid-row: 6;
+  -ms-grid-column: 3;
+  grid-area: n3;
+}
+
+.grid_layout .btn-number[data-text="4"] {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: n4;
+}
+
+.grid_layout .btn-number[data-text="5"] {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
+  grid-area: n5;
+}
+
+.grid_layout .btn-number[data-text="6"] {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+  grid-area: n6;
+}
+
+.grid_layout .btn-number[data-text="7"] {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: n7;
+}
+
+.grid_layout .btn-number[data-text="8"] {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: n8;
+}
+
+.grid_layout .btn-number[data-text="9"] {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+  grid-area: n9;
+}
+
+.grid_layout .btn-operation[data-text="+"] {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 4;
+  grid-area: pl;
+}
+
+.grid_layout .btn-operation[data-text="-"] {
+  -ms-grid-row: 4;
+  -ms-grid-column: 4;
+  grid-area: mi;
+}
+
+.grid_layout .btn-operation[data-text="*"] {
+  -ms-grid-row: 3;
+  -ms-grid-column: 4;
+  grid-area: mu;
+}
+
+.grid_layout .btn-operation[data-text="/"] {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: di;
+}
+
+.grid_layout #sin {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: sin;
+}
+
+.grid_layout #cos {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: cos;
+}
+
+.grid_layout #tn {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: tn;
+}
+
+.grid_layout #cotg {
+  grid-area: cotg;
+}
+
+.grid_layout .btn-c {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: c;
+}
+
+.grid_layout .btn-pi {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: pi;
+}
+
+.grid_layout .btn-e {
+  grid-area: e;
+}
+
+.grid_layout .btn-dot {
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 3;
+  grid-area: do;
+}
+
+.grid_layout .btn-eq {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 4;
+  grid-area: pl;
+}
+
+.grid_layout .btn-del {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: maz;
+}
+/*# sourceMappingURL=main.css.map */
