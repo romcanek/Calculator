@@ -1,0 +1,184 @@
+@import "./variables";
+
+@font-face{
+    font-family: digital;
+    src: url("../font/digital-7.ttf");
+}
+
+
+::-webkit-scrollbar {
+    border-radius: 50px;
+    height: 6px;
+    width: 6px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #303137;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: #1E87CF;
+}
+
+body{
+    overflow: auto;
+    margin: 0;
+}
+
+h1 {
+    font-size: $TitleSize;
+    text-align: center;
+}
+
+/* 
+====================
+ calculator styling
+====================
+*/
+.grid_layout {
+    background-color: #17181A;
+    padding: 3em 2.3em 3em 2.3em;
+    border-radius: 15px;
+    width: min-content;
+    height: 100%;
+    margin: auto;
+    display: grid;
+    gap: $gapSize;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "out out out out"
+        "sin cos tn pi"
+        "c maz di mu"
+        "n7 n8 n9 mi"
+        "n4 n5 n6 pl"
+        "n1 n2 n3 pl"
+        "n0 n0 do pl"
+        "n0 n0 do pl"
+        ;
+    // input pole
+    .text_box {
+        font-family: digital;
+        text-align: right;
+        grid-area: out;
+        color: white;
+        font-size: 3rem;
+        padding-block: 10px;
+        padding-right: 15px;
+        overflow-x: auto;
+        white-space: nowrap;
+        margin-bottom: 1.2em;
+    }
+    // btn
+    .btn{
+        border: none;
+        font-size: $ButtonFontSize;
+        width: $ButtonSize;
+        height: $ButtonSize;
+        margin: 0.05em;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    // individual btn styling
+    .btn-c{
+        background-color: #5D5F61;
+        color: #A1A2A3;
+        &:hover{
+            background-color: #333435;
+        }
+    }
+    .btn-pi, .btn-gon{
+        border-radius: 10em;
+        padding-block: 10px;
+        width: 100%;
+        height: 100%;
+        font-size: $ButtonFontSize * 0.7;
+        background-color: #303137;
+        color: #1E87CF;
+        &:hover{
+            background-color: #4c4d52;
+        }
+    }
+    .btn-operation{
+        background-color: #005DB2;
+        color: #339DFF;
+        &:hover{
+            background-color: #24639e;
+        }
+    }
+    .btn-operation[data-text="+"]{
+        height: $ButtonSize * $plMultiplier;
+        margin-top: $plusEqMargin;
+    }
+    .btn-eq{
+        background-color: #1991FF;
+        color: #B2DAFF;
+        margin-top: $gapSize + $plusEqMargin + $ButtonSize * $plMultiplier;
+        height: $ButtonSize * $plMultiplier;
+        &:hover{
+            background-color: #0068c9;
+        }
+    }
+    .btn-number, .btn-dot{
+        background-color: #303137;
+        color: #1E87CF;
+        &:hover{
+            background-color: #4c4d52;
+        }
+    }
+    .btn-del{
+        background-color: #5D5F61;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: maz;
+        img{
+            width: 32px;
+            height: auto;
+        }
+        &:hover{
+            background-color: #333435;
+        }
+    }
+
+    .btn-number[data-text="0"] 
+    {
+        grid-area: n0;
+        width: 100%;
+    }
+    // grid areas
+    .btn-number[data-text="1"] {grid-area: n1;}
+    .btn-number[data-text="2"] {grid-area: n2;}
+    .btn-number[data-text="3"] {grid-area: n3;}
+    .btn-number[data-text="4"] {grid-area: n4;}
+    .btn-number[data-text="5"] {grid-area: n5;}
+    .btn-number[data-text="6"] {grid-area: n6;}
+    .btn-number[data-text="7"] {grid-area: n7;}
+    .btn-number[data-text="8"] {grid-area: n8;}
+    .btn-number[data-text="9"] {grid-area: n9;}
+    .btn-operation[data-text="+"] {grid-area: pl;}
+    .btn-operation[data-text="-"] {grid-area: mi;}
+    .btn-operation[data-text="*"] {grid-area: mu;}
+    .btn-operation[data-text="/"] {grid-area: di;}
+    #sin{grid-area: sin;}
+    #cos{grid-area: cos;}
+    #tn{grid-area: tn;}
+    #cotg{grid-area: cotg;}
+    .btn-c {
+        grid-area: c;
+    }
+    .btn-pi {
+        grid-area: pi;
+    }
+    .btn-e {
+        grid-area: e;
+    }
+    .btn-dot {
+        grid-area: do;
+    }
+    .btn-eq {
+        grid-area: pl;
+    }
+    .btn-del{
+        grid-area: maz;
+    }
+}
